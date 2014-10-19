@@ -1,0 +1,77 @@
+{
+  "name": "Modular.Client",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-core": "^3.1.1",
+    "browserify": "^6.1.0",
+    "browserify-ngannotate": "^0.2.0",
+    "csswring": "^1.3.0",
+    "del": "^0.1.3",
+    "gulp": "^3.8.8",
+    "gulp-angular-templatecache": "^1.4.2",
+    "gulp-concat": "^2.4.1",
+    "gulp-header": "^1.1.1",
+    "gulp-imagemin": "^1.0.1",
+    "gulp-jshint": "^1.8.5",
+    "gulp-less": "^1.3.6",
+    "gulp-minify-html": "^0.1.6",
+    "gulp-postcss": "^2.0.0",
+    "gulp-replace": "^0.4.0",
+    "gulp-rev": "^1.1.0",
+    "gulp-sourcemaps": "^1.2.4",
+    "gulp-uglify": "^1.0.1",
+    "gulp-util": "^3.0.1",
+    "gulp-watch": "^1.1.0",
+    "jshint-stylish": "^1.0.0",
+    "run-sequence": "^1.0.1",
+    "string-format": "^0.2.1",
+    "vinyl-source-stream": "^1.0.0"
+  },
+  "dependencies": {
+    "angular": "^1.3.0",
+    "angular-route": "^1.3.0",
+    "bootstrap": "^3.2.0",
+    "jquery": "^2.1.1",
+    "lodash": "^2.4.1",
+    "toastr": "^2.0.4"
+  },
+  "browser": {
+    "angular": "./shims/angular.shim.js"
+  },
+  "paths": {
+    "index": "./src/Modular.Client/index.html",
+    "templates": "./src/Modular.Client/app/**/*.html",
+    "js": "./src/Modular.Client/app/**/*.js",
+    "mainJs": "./src/Modular.Client/app/app.module.js",
+    "assets": "./src/Modular.Client/assets/**/*",
+    "images": "./src/Modular.Client/images/**/*",
+    "less": "./src/Modular.Client/styles/**/*.less",
+    "mainLess": "./src/Modular.Client/styles/site.less",
+    "tmp": "./src/Modular.Client/tmp",
+    "destination": "./src/Modular.Server/app"
+  },
+  "filenames": {
+    "siteCss": "site.css",
+    "siteCssMainfest": "rev-site-css.json",
+    "siteJs": "site.js",
+    "siteJsMainfest": "rev-site-js.json",
+    "vendorJs": "vendor.js",
+    "vendorJsMainfest": "rev-vendor-js.json"
+  },
+  "vendorPackages": [
+    "angular",
+    "angular-route",
+    "jquery",
+    "lodash",
+    "toastr"
+  ]
+}
