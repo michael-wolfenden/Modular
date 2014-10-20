@@ -19,7 +19,7 @@ var browserified = function (filename) {
         debug: true
     });
 
-    log.task('-', exports);
+    log.task('-', pkg.vendorPackages);
 
     _(pkg.vendorPackages).forEach(function(vendorShim) {
         b.require(vendorShim);

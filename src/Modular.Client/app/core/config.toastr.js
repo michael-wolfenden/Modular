@@ -2,7 +2,7 @@
 
 module.exports =
 /* @ngInject */
-function toastrConfig(toastr) {
+function configure(toastr) {
 	toastr.options.timeOut = 4000;
 	toastr.options.positionClass = 'toast-bottom-right';
 };

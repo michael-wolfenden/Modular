@@ -22,6 +22,22 @@ function routehelper($location, $rootScope, $route, logger, routehelperConfig) {
     return service;
     ///////////////
 
+    function init() {
+        handleRoutingErrors();
+        updateDocTitle();
+    }
+
+    function updateDocTitle() {
+        $rootScope.$on('$routeChangeSuccess',
+            function (event, current) {
+                routeCounts.changes+=1;
+                handlingRouteChangeError = false;
+                var title = routehelperConfig.config.docTitle + ' ' + (current.title || '');
+                $rootScope.title = title; // data bind to <title>
+            }
+        );
+    }
+    
     function configureRoutes(routes) {
         routes.forEach(function (route) {
             route.config.resolve =
@@ -53,11 +69,6 @@ function routehelper($location, $rootScope, $route, logger, routehelperConfig) {
         );
     }
 
-    function init() {
-        handleRoutingErrors();
-        updateDocTitle();
-    }
-
     function getRoutes() {
         for (var prop in $route.routes) {
             if ($route.routes.hasOwnProperty(prop)) {
@@ -69,16 +80,5 @@ function routehelper($location, $rootScope, $route, logger, routehelperConfig) {
             }
         }
         return routes;
-    }
-
-    function updateDocTitle() {
-        $rootScope.$on('$routeChangeSuccess',
-            function (event, current) {
-                routeCounts.changes+=1;
-                handlingRouteChangeError = false;
-                var title = routehelperConfig.config.docTitle + ' ' + (current.title || '');
-                $rootScope.title = title; // data bind to <title>
-            }
-        );
     }
 };
